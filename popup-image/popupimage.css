@@ -1,0 +1,58 @@
+/* Pour faire un pop up d'images
+3 fichiers liés : popupimage.html, popupimage.css, popupimage.js
+20 mai 2022 */
+
+
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+main{
+    width: 80%;
+
+    /* pour centrer */
+    margin: auto;
+    text-align: center;
+
+    /* juste pour avoir un scroll dans le cadre de l'exercice */
+    min-height: 2000px;
+}
+
+section{
+    padding: 4% 0;
+}
+
+#affiche {
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    z-index: 1;
+    position: fixed; /* c'est comme absolute, c'est pour bien que l'image reste au dessus */
+    visibility: hidden;
+
+}
+
+#affiche img{
+    display: block;
+    position: relative;
+    align-self: center; /* pour que les éléments s'alignent automatiquement à l'intérieur du parent */
+    
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.container img{
+    display: block;
+    height: 120px; /* pour réduire l'image source 500px en 120 px */
+}

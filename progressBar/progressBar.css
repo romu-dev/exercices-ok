@@ -1,0 +1,35 @@
+/* Pour faire une progress bar qui avance en fonction du défilement de  l'article */
+/* 3 fichiers liés : progressBar.html, progressBar.css, progressBar.js */
+
+body{
+    margin: 0;
+    padding: 0;
+
+}
+
+
+/* container de la progress bar */
+.progress-container{
+    position: fixed;
+    top: 0;
+    z-index: 1;
+
+    width: 100%;
+    height: 12px; /* ou 5vh pour le responsive */
+    background-color: rgb(87, 230, 230);
+
+}
+
+/* barre de progression */
+.progress-bar{
+    width: 0%;
+    height: 12px; /* ou 5vh pour le responsive */
+    background-color: red;
+}
+
+/* On a besoin de la taille totale du texte, la taille de l'écran
+récupérer la valeur du scroll en fonction de la page et de son contenu */
+.content{
+    width: 80%;
+    margin: auto;
+}
