@@ -1,0 +1,36 @@
+body{
+    /* ----------------------------- Réinitialisation des marges */
+    margin: 0px;
+    padding: 0px;
+
+    /* ---------------------------- définition de la couleur de fond */
+    background-color: rgb(24, 56, 45);
+    width: 100%;
+
+    /* ----------------------------- définition de la police 
+    BIEN GARDER L'ORDRE DES 5 ATTRIBUTS*/
+    
+    font-style: normal;
+    font-weight: normal;
+    /*font-size: 12pt;*/
+    line-height: 1.3em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+    /* couleur de la police */
+    color: bisque;
+
+    /* --------------------------------- centrage des éléments inline */
+    text-align: center;
+}
+
+
+
+
+
+div{
+    width: 80%; /* obligatoire pour pouvoir centrer */
+    height: 20%;
+    background-color: aquamarine;
+    margin: auto; /* centrage des éléments block */
+}
+

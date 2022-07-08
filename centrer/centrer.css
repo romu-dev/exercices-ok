@@ -1,0 +1,56 @@
+/* 
+exercice pour centrer
+tuto de Pierre Giraud
+youtube
+https://www.youtube.com/watch?v=4tqKz-UMNf0&list=PLwLsbqvBlImHAT6eA11g56NmqSSxxUT3I&index=4
+*/
+
+body{
+        /* Reset de marge pour contrer certains navigateurs qui en impose */
+    margin: 0px;
+    padding: 0px;
+
+        /* Définition générale des couleurs et typo du document */
+    background-color: rgb(188, 243, 243);
+    color: brown;
+
+    font-size: 16px;
+    font-family: Verdana, sans-serif;
+}
+
+
+
+div{
+    width: 80%;
+    background-color: rgb(216, 166, 192);
+
+    margin: 20px auto;
+    padding: 15px;
+    text-align: center; /* centrage pour les enfants types inline  */
+
+    border: 3px solid rgb(0, 0, 0);
+
+    
+}
+
+/*Test centrage sur block */
+p{
+    width: 60%; /* définition de largeur obligatoire */
+    background-color: rgb(255, 255, 255);
+    /*font-size: 38pt;*/
+
+    margin: 20px auto; /* centrage pour les enfants types block */
+    padding: 15px;
+    border: 3px solid blue;
+
+}
+
+/*Test centrage sur inline */
+strong{
+    border: 3px solid rgb(247, 0, 255);
+    padding: 5px;
+}
+em{
+    border: 3px solid rgb(247, 0, 255);
+    padding: 5px;
+}

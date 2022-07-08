@@ -1,0 +1,32 @@
+/* test typo */
+
+
+/* 2 typos donc 2 @fontface */
+@font-face {
+    font-family: "tahuregular"; /* définition d'un nom de variable */
+    src: url("fonts/Tahu!.ttf"); /* chemin d'accès à la typo enregistrée dans le fichier */
+    
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: "Rubik"; /* définition d'un nom de variable */
+    src: url("fonts/Rubik.ttf"); /* chemin d'accès à la typo enregistrée dans le fichier */
+    
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+section{
+    font-family: "tahuregular"; /* reprise du nom de la variable pour application */
+    font-size: 30px;
+}
+
+#secondetypo{
+    font-family: "Rubik";
+    font-size: 30px;
+
+}

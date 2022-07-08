@@ -1,0 +1,158 @@
+/* Pierre Giraud
+https://www.youtube.com/watch?v=cWrmoGwQ1iE&list=PLwLsbqvBlImHAT6eA11g56NmqSSxxUT3I&index=2
+le html et css en pratique (2/5)
+tuto Création d'un menu déroulant en HTML et en CSS */
+
+
+
+
+/* définition police pour créer une valeur Rem sur balise html ou body exclusivement */
+
+html {
+    /* ----------------------------- définition de la police 
+    BIEN GARDER L'ORDRE DES 5 ATTRIBUTS*/
+    
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16pt;
+    line-height: 1.3em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: bisque;
+}
+
+
+body{
+    /* ----------------------------- Réinitialisation des marges */
+    margin: 0px;
+    padding: 0px;
+
+    /* ---------------------------- définition de la couleur de fond */
+    background-color: rgb(24, 56, 45);
+    width: 100%; /* permet de prendre 100% du viewport */
+
+    /* --------------------------------- centrage des éléments inline */
+    text-align: center;
+}
+nav{
+    width: 100%;
+    background-color: black;
+}
+nav > ul{
+    margin: 0px;
+    padding: 0px;
+}
+nav  ul  li{
+    float: left; /*   élément flottant à gauche             */
+    /* quand un élément parent est non flottant (ici ul) et comporte des enfants flottant (ici li), celui-ci ne s'affiche plus car il perd sa hauteur*/
+    /* pour résoudre ce problème, on pourrait mettre un élément hidden mais pas dans ce cas, sinon on ne verra plus nos sous-menu par la suite : ils seront hidden*/
+    position : relative;
+}
+
+
+/* la solution est la suivante  clearx 
+Synthaxe compliquée et immuable pour corriger notre problème.
+C'est une fonction difficile à retrouver, qu'il faut connaître */
+nav > ul::after{
+    content: ""; /* création d'un contenu vide */
+    display: block;
+    clear: both; 
+}
+nav ul li a{
+    padding: 20px 30px;
+    color: white;
+}
+
+/* rectificatif padding, associée avec la rubrique
+/* Rajout de couleur et de ligne au survol de la souris */
+/* couleur de trait supérieur identique à celle de colorationdu fond de case (+ opacité) */
+nav > ul > li a:hover{
+    padding: 15px 30px 20px 30px; /* rectification de padding */
+}
+
+
+
+
+nav li{
+    list-style-type: none; /* suppresion des puces de liste */
+}
+.submenu{
+    display: none; /* cache les div de sous-menu nommées "submenu" */
+}
+
+nav a{
+    display: inline-block;
+    text-decoration: none;
+
+}
+
+nav li:hover .submenu{
+    display: inline-block;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    padding: 0px;;
+    z-index: 1000;
+}
+
+.submenu li{
+    border-bottom: 1px solid #ccc ;
+}
+
+.submenu li a{
+    padding: 15px 30px;
+    font-size: 14pt;
+    color: azure;
+    width: 200px;
+}
+
+
+
+/* ----------------- rajout de code facultatif ------------------------ */
+
+/* Rajout de couleur et de ligne au survol de la souris */
+/* couleur de trait supérieur identique à celle de colorationdu fond de case (+ opacité) */
+
+.menu-html:hover{
+    border-top: 5px solid #e44d26;
+    background-color: rgba(228, 77, 38, 0.5);
+    
+}
+.menu-css:hover{
+    border-top: 5px solid #e44d26;
+    background-color: rgba(228, 77, 38, 0.5);
+}
+.menu-js:hover{
+    border-top: 5px solid #e44d26;
+    background-color: rgba(228, 77, 38, 0.5);
+}
+
+/* couleur dans nos sous menu */
+
+.menu.html .submenu{
+    background-color: #e44d26;
+}
+.menu.css .submenu{
+    background-color: #e44d26;
+}
+.menu.js .submenu{
+    background-color: rgb(250, 215, 100);
+}
+
+.submenu li:hover a{
+    color: #eee;
+    font-weight: bolder;
+    background-color: #e44d26;
+}
+
+.menu-html .submenu li:hover{
+    background-color: #e44d26;
+}
+.menu-css .submenu li:hover{
+    background-color: #e44d26;
+}
+.menu-js .submenu li:hover{
+    background-color: rgb(250, 215, 100);
+}
+
+
+

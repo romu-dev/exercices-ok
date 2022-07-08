@@ -1,0 +1,129 @@
+/* 
+Author : Romuald HIRAUX;
+URL : stylemenu.css
+Thème Name : tuto Youtube Pierre Giraud - html/css en pratique - création d'un menu simple
+Description : 13 avril 2022 
+Tags : 
+*/
+
+
+/* ------------------------- typos -----------------------------------*/
+
+/* 3 typos donc 3 @fontface */
+@font-face {
+    font-family: "Rubik";                              /* définition d'un nom de variable que l'on réutilisera plus tard */
+    src: url(RubikGlitch-Regular.ttf) format("ttf");
+    font-weight: normal;                               /* pour  augmenter la graisse */
+    font-size: normal;                                 /* notion d'em */
+}
+
+@font-face {
+    font-family: "Gochi"; 
+    src: url("fonts/GochiHand-Regular.ttf"); 
+    3
+}
+
+@font-face {
+    font-family: "Wyntex"; 
+    src: url("fonts/Wyntex Brasco.ttf"); 
+}
+
+/* ------------------------- crée une référence commune REM em -----------------------------------*/
+/* sur balise html ou body exclusivement */
+
+
+
+/* --------------------- Permet de définir les dimensions et propriétés de la page ----------------------*/
+body{
+    /* ----------------------------- Réinitialisation des marges */
+    margin: 0px;
+    padding: 0px;
+
+    /* ---------------------------- définition de la couleur de fond */
+    background-color: rgb(24, 56, 45);
+    width: 100%; /* permet de prendre 100% du viewport */
+
+    /* ----------------------------- définition de la police 
+    BIEN GARDER L'ORDRE DES 5 ATTRIBUTS*/
+    
+    font-style: normal;
+    font-weight: normal;
+    /*font-size: 12pt;*/
+    line-height: 1.3em;
+    font-family: 'source code pro', calibri, Tahoma, sans-serif;
+    
+    /* couleur de la police */
+    color: bisque;
+
+    /* --------------------------------- centrage des éléments inline */
+    text-align: center;
+    
+}
+
+
+
+/* ---------------------------------------------------------------------------
+                    Réalisation de la barre de navigation
+--------------------------------------------------------------------------- */
+
+nav{
+    margin: 0px auto; /* pour centrer */
+    width: 90%; /* prendra 100% de la vue de notre body */
+    background-color: #424558;
+    
+    /* border: 2px solid black; ----------------- à activer pour travailler */
+}
+
+/*Création de cette div juste pour assurer le centrage des cases liens dans la nav*/
+.pourcentrer{
+    display: table;
+    margin: 0px auto; /* pour centrer */
+}
+
+
+nav ul{
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden; /* Pour corriger un défaut de hauteur à cause du float dans li */
+
+    /*border: 2px solid black; ----------------- à activer pour travailler */
+}
+
+nav li{
+    list-style-type: none; /* pour enlever les puces */
+    float: left; /* pour aligner les éléments de la liste */
+
+    /*border: 2px solid black; ----------------- à activer pour travailler */
+}
+
+nav a {
+    display: inline-block; /* transforme les liens en blocks */
+    text-decoration: none; /* supprime le soulignement par défaut*/
+    padding: 20px 30px; /*pour agrandir la surface cliquable */
+    color: #FFFFFF; /* couleur des liens */
+}
+
+/* au survol */
+.menu-html:hover{
+    border-top: 5px solid rgb(255, 153, 0); /* pour faire un trait au dessus de la case */
+    background-color:rgba(228, 77, 38, 0.15) /* opacité de la case de lien */
+}
+.menu-css:hover{
+    border-top: 5px solid rgb(255, 153, 0); /* pour faire un trait au dessus de la case */
+    background-color:rgba(228, 77, 38, 0.15) /* opacité de la case de lien */
+}
+.menu-js:hover{
+    border-top: 5px solid rgb(255, 153, 0); /* pour faire un trait au dessus de la case */
+    background-color:rgba(228, 77, 38, 0.15) /* opacité de la case de lien */
+}
+.menu-contact:hover{
+    border-top: 5px solid rgb(255, 153, 0); /* pour faire un trait au dessus de la case */
+    background-color:rgba(228, 77, 38, 0.15) /* opacité de la case de lien */
+}
+
+/* pour compenser le décalage de 5 px sur la bordure haute au survol des liens */
+nav a:hover{
+    /*padding: 20px 30px;             valeurs définies plus haut */
+    padding: 15px 30px 20px 30px;               /* correctif */
+    
+}

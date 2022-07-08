@@ -1,0 +1,26 @@
+/* flexnav */
+
+
+div{
+    font-size: 20px;
+    /*text-align: center;*/
+}
+.menu{
+    height: 60px;
+    background-color: #eee;
+    border: 5px solid black;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    align-content: center;
+}
+
+@media (max-width: 500px){
+    .menu{
+        flex-direction: column;
+        height: auto;
+    }
+}

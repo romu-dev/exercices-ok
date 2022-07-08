@@ -1,0 +1,35 @@
+/* tutomediaqueries */
+
+body{
+    background-color: black;
+    text-align: center;
+    font-size: 20px;
+}
+
+h1{
+    color: aliceblue;
+}
+
+@media screen and (max-width: 1024px){
+    h1{
+        color: aqua;
+    }
+}
+
+@media screen and (max-width: 900px){
+    h1{
+        color: rgb(197, 148, 180);
+    }
+}
+
+@media screen and (max-width: 768px){
+    h1{
+        color: rgb(255, 255, 0);
+    }
+}
+
+@media screen and (max-width: 720px){
+    h1{
+        color: rgb(255, 106, 0);
+    }
+}

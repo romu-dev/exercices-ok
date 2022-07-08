@@ -1,0 +1,74 @@
+/* pour carousel */
+
+/* Nous donnons à la fenêtre une largeur de 80% pour la rendre responsive, et une largeur maximum (max-width) qui correspond à la largeur naturelle d’une image individuelle (1000px dans notre exemple), car nous ne souhaitons pas qu’une image soit agrandie : */
+
+div#slider {
+     width: 80%;
+     height: 500px;
+     max-width: 1000px; 
+}
+
+/* Dans notre CSS, la largeur de l’élément figure est un pourcentage, qui est un multiple de la div qui le contient. Autrement dit, si la bande d’images contient cinq images, et que notre div n’en montre qu’une, la figure est 5x plus large, c’est à dire 500% la largeur de la div container : */
+
+div#slider figure {
+    position: relative;
+    width: 500%;
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+    text-align: left;
+}
+
+/* La font-size: 0 aspire l’air autout de l’élément figure en retirant tout espace entre les images et autour. position: relative permet à la figure d’être déplacée facilement pendant l’animation. text-align: left est là en raison d’un bug de Safari 5 pour Windows.
+
+Nous devons répartir les images de manière régulière à l’intérieur de la bande. Le calcul est très simple : Si nous considérons que l’élément figure fait 100% de large, chaque image doit prendre 1/5 de l’espace horizontal :
+
+100% / 5 = 20%
+
+Ce qui nous conduit à la déclaration CSS suivante :*/ 
+
+div#slider figure img {
+     width: 20%;
+     height: auto;
+     float: left;
+}
+
+/* (Ici aussi, float: left sert à corriger un bug de Win Safari 5).
+
+Enfin, nous cachons ce qui dépasse (overflow) de la div : */
+
+div#slider { 
+    width: 80%;
+    max-width: 1000px;
+    overflow: hidden
+}
+
+/* ----------------------------------- Animer la bande ----------------------------*/
+/*Il nous faut maintenant déplacer la bande de droite à gauche. Si on considère que la div container fait 100% de large, chaque mouvement de la bande vers la gauche sera mesuré en incréments de cette distance :*/
+
+@keyframes slidy {
+    0% { left: 0%; }
+    20% { left: 0%; }
+    25% { left: -100%; }
+    45% { left: -100%; }
+    50% { left: -200%; }
+    70% { left: -200%; }
+    75% { left: -300%; }
+    95% { left: -300%; }
+    100% { left: -400%; }
+}
+
+/* Chaque image du carrousel sera affichée dans la div pour 20% de la durée totale de l’animation, le temps de déplacement étant de 5%.
+
+Il ne nous reste plus qu’à appeler notre animation pour que les choses commencent (le code est indiqué ici sans préfixes constructeurs, pour la simplicité, mais il ne faudra pas les oublier, vous pouvez utiliser Autoprefixer pour cela).*/
+
+div#slider figure {
+    position: relative;
+    width: 500%;
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+    left: 0;
+    text-align: left;
+    animation: 10s slidy infinite;
+}

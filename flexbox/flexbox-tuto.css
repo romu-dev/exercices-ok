@@ -1,0 +1,24 @@
+.container{
+    background-color: rgb(190, 155, 155);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.item{
+    opacity: 1;
+    cursor: pointer;
+    background-color: #7971ea;
+    border: 5px solid #443ea0;
+    border-radius: 8px;
+    margin: 40px;
+    padding: 60px;
+    color: #eee;
+    font-size: 24px;
+    text-align: center;
+}
+
+.item:hover{
+    opacity: 0.7;
+}
